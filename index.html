@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SweetBite Cakes</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: #dfc5d2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff0f6;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #ff4d88;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ff4d88;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff66a3;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 10px 10px;
+      background-color: #ffe4f2;
+    }
+
+    .intro h2 {
+      color: #e60073;
+    }
+
+    .cake-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 30px 0;
+      gap: 20px;
+    }
+
+    .cake-card {
+      background-color: hsl(327, 47%, 67%);
+      border-radius: 16px;
+      padding: 12px;
+      width: 220px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: transform 0.3s ease;
+    }
+
+    .cake-card:hover {
+      transform: scale(1.06);
+    }
+
+    .cake-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #fff0f6;
+      font-size: 14px;
+      color: #cc0066;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes floatHearts {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.floating-heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://cdn-icons-png.flaticon.com/128/833/833472.png') no-repeat center;
+  background-size: contain;
+  animation: floatHearts 6s linear infinite;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.floating-heart:nth-child(1) { left: 10%; animation-delay: 1s; }
+.floating-heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.floating-heart:nth-child(3) { left: 50%; animation-delay: 3s; }
+.floating-heart:nth-child(4) { left: 70%; animation-delay: 4s; }
+.floating-heart:nth-child(5) { left: 90%; animation-delay: 5s; }
+
+  </style>
+</head>
+<body>
+   
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+
+  <header>
+    <h1>SweetBite 🍰</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h2>Delicious Cakes, Delivered with Love 🎂💕</h2>
+    <p>Custom-made cakes for every celebration.</p>
+    <h3>Our Cute Cakes 🧁</h3>
+  </section>
+
+  <section class="cake-gallery">
+    <div class="cake-card" style="animation-delay: 0.1s;">
+      <img src="strawbery.jpg" alt="Cute Cake 1">
+    </div>
+    <div class="cake-card" style="animation-delay: 0.3s;">
+      <img src="bear.jpg" alt="Cute Cake 3">
+    </div>
+    <div class="cake-card" style="animation-delay: 0.4s;">
+      <img src="berry-blush-cake.jpg" alt="Cute Cake 4">
+    </div>
+  </section>
+  <section class="cake-gallery">
+    <div class="cake-card" style="animation-delay: 0.1s;">
+      <img src="creamy.jpeg" alt="Cute Cake 1">
+    </div>
+  
+    <div class="cake-card" style="animation-delay: 0.3s;">
+      <img src="sprinkle.jpg" alt="Cute Cake 3">
+    </div>
+    <div class="cake-card" style="animation-delay: 0.4s;">
+      <img src="rainbow.jpeg" alt="Cute Cake 4">
+    </div>
+  </section>
+
+  <footer>
+    © 2025 SweetBite Cakes 🍓 All rights reserved.
+  </footer>
+</body>
+</html>

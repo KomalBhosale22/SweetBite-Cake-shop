@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cake Menu | SweetBite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes floatHearts {
+    0% {
+      bottom: 0;
+      opacity: 0;
+      transform: translateX(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(10px);
+    }
+    100% {
+      bottom: 100%;
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+  }
+
+  body {
+    background: #fff0f5;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  header {
+    background-color: #ffe4f2;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff4da6;
+    font-family: 'Pacifico', cursive;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin-left: 1.2rem;
+    color: #ff4da6;
+    font-weight: bold;
+  }
+
+  .cake-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.6rem;
+    color: #d63384;
+    animation: slideIn 0.8s ease-in-out both;
+    margin-bottom: 1.5rem;
+    background: #ffe6f2;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Pacifico', cursive;
+    box-shadow: 0 0 10px #ffd6eb;
+  }
+
+  .cake-card {
+    background: #ffe6f2;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.7s ease-in-out both;
+    position: relative;
+  }
+
+  .cake-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 102, 178, 0.3);
+  }
+
+  .cake-card img {
+    max-width: 100%;
+    border-radius: 12px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .cake-title {
+    font-size: 1.2rem;
+    margin: 0.6rem 0;
+    color: #e60073;
+    font-weight: 600;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .cake-price {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .order-btn {
+    background: #ff66b2;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease;
+  }
+
+  .order-btn:hover {
+    background: #ff3385;
+    transform: scale(1.08);
+  }
+
+  /* Floating Hearts */
+  .floating-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('https://cdn-icons-png.flaticon.com/128/833/833472.png') no-repeat center;
+    background-size: contain;
+    animation: floatHearts 6s linear infinite;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  .floating-heart:nth-child(2) { left: 10%; animation-delay: 1s; }
+  .floating-heart:nth-child(3) { left: 30%; animation-delay: 2s; }
+  .floating-heart:nth-child(4) { left: 50%; animation-delay: 3s; }
+  .floating-heart:nth-child(5) { left: 70%; animation-delay: 4s; }
+  .floating-heart:nth-child(6) { left: 90%; animation-delay: 5s; }
+
+  @keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cute-footer {
+  background: linear-gradient(135deg, #ffd6eb, #ffe6f2);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #e60073;
+  font-size: 1rem;
+  border-top: 3px dashed #ffb6c1;
+  animation: fadeUp 1s ease-in-out;
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 -3px 15px rgba(255, 105, 180, 0.1);
+}
+
+.footer-links a {
+  color: #ff4da6;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #d63384;
+}
+
+</style>
+
+   
+</head>
+<body>
+  <div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+
+  <header>
+    <div class="logo">SweetBite 🍰</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cake-gallery">
+    <h3>Birthday Cakes</h3>
+    <div class="cake-card">
+      <img src="strawbery.jpeg" alt="Strawberry Dream" />
+      <div class="cake-title">Strawberry Dream</div>
+      <div class="cake-price">₹350</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="Chocolate.jpg" alt="Unicorn Magic" />
+      <div class="cake-title">Choco Choco</div>
+      <div class="cake-price">₹250</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="heart.jpeg" alt="White Tiered Cake" />
+      <div class="cake-title">Piece of love</div>
+      <div class="cake-price">₹300</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="unicorn.jpeg" alt="Rose Garden" />
+      <div class="cake-title">Unicorn Magic</div>
+      <div class="cake-price">₹229</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+  </section>
+  <section class="cake-gallery">
+     <h3>Wedding Cakes</h3>
+    <div class="cake-card">
+      <img src="rose.jpg" alt="Strawberry Dream" />
+      <div class="cake-title">Bite of pure love</div>
+      <div class="cake-price">₹499</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="white.jpg" alt="Unicorn Magic" />
+      <div class="cake-title">Manatory piece</div>
+      <div class="cake-price">₹370</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="w3.jpeg" alt="White Tiered Cake" />
+      <div class="cake-title">Sweet Love</div>
+      <div class="cake-price">₹399</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="w4.webp" alt="Rose Garden" />
+      <div class="cake-title">Pure Love</div>
+      <div class="cake-price">₹550</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+  </section>
+    <section class="cake-gallery">
+    <h3>HeartFull Cravings </h3>
+    <div class="cake-card">
+      <img src="c1.avif" alt="Strawberry Dream" />
+      <div class="cake-title">Feel it</div>
+      <div class="cake-price">₹200</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="c2.jpg" alt="Unicorn Magic" />
+      <div class="cake-title">wow</div>
+      <div class="cake-price">₹220</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="c3.jpeg" alt="White Tiered Cake" />
+      <div class="cake-title">love love love</div>
+      <div class="cake-price">₹300</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+    <div class="cake-card">
+      <img src="c4.jpeg" alt="Rose Garden" />
+      <div class="cake-title">Magical world</div>
+      <div class="cake-price">₹329</div>
+      <a href="order.html"><button class="order-btn">Order Now</button></a>
+    </div>
+  </section>
+</body>
+<footer class="cute-footer">
+  <p>Made with 💕 and 🍰 by SweetBite</p>
+   
+</footer>
+
+</html>

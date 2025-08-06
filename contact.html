@@ -1,0 +1,257 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | SweetBite Cakes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    header {
+      background-color: #ffc0cb;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #b03060;
+    }
+
+    /* Fancy Home Button */
+    .fancy-btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #ff90b3, #ffa9c6);
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .fancy-btn:hover {
+      background: linear-gradient(to right, #ff70a6, #ff8cb3);
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #ff69b4;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+      color: #b03060;
+      font-weight: 600;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+      height: 120px;
+    }
+    .btn {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: block;
+      margin: 0 auto;
+    }
+    .btn:hover {
+      background-color: #ff1493;
+    }
+    .info {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .info p {
+      margin: 0.3rem 0;
+      text-align: center;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #ffc0cb;
+      color: #b03060;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.95rem;
+      border-top: 2px dashed #ff69b4;
+      margin-top: 3rem;
+    }
+    @keyframes floatHearts {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.floating-heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://cdn-icons-png.flaticon.com/128/833/833472.png') no-repeat center;
+  background-size: contain;
+  animation: floatHearts 6s linear infinite;
+  z-index: 1;
+  opacity: 0.4;
+}
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 192, 203, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: #fff0f6;
+  border: 2px solid #ff69b4;
+  border-radius: 16px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.popup-box h2 {
+  color: #e91e63;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.popup-box p {
+  font-size: 16px;
+  color: #444;
+}
+
+.floating-heart:nth-child(1) { left: 10%; animation-delay: 1s; }
+.floating-heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.floating-heart:nth-child(3) { left: 50%; animation-delay: 3s; }
+.floating-heart:nth-child(4) { left: 70%; animation-delay: 4s; }
+.floating-heart:nth-child(5) { left: 90%; animation-delay: 5s; }
+
+  </style>
+ 
+
+</head>
+<body>
+  <!-- Floating Heart Background -->
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+
+  <header>SweetBite Cakes 🎂</header>
+
+  <!-- Cute Home Button >
+  <a href="index.html" class="fancy-btn">🏠 Home</a-->
+
+  <div class="container">
+    <h2>Contact Us 📞</h2>
+    <p>We'd love to hear from you! Whether it's a question, feedback, or a custom cake request.</p>
+
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required placeholder="Your Name" />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required placeholder="Your Email" />
+
+      <label for="phone">Phone (optional)</label>
+      <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" />
+
+      <label for="message">Your Message</label>
+      <textarea name="message" id="message" placeholder="Write your message..."></textarea>
+
+      <button type="submit" class="btn">Send Message 💌</button>
+    </form>
+
+    <div class="info">
+      <p>📍 Address: 123 Sweet Street, Caketown</p>
+      <p>📞 Phone: +91 98765 43210</p>
+      <p>📧 Email: komalbhosale388@gmail.com</p>
+      <p>🕒 Hours: Mon–Sat | 10 AM – 7 PM</p>
+      <p>📸 Instagram: @sweetbitecakes</p>
+    </div>
+  </div>
+
+  <center><a href="index.html" class="fancy-btn" >🏠 Home</a></center>
+
+
+  <footer class="site-footer">
+    <p>Made with ❤️ by SweetBite Cakes | © 2025</p>
+  </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.contact-form');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      Swal.fire({
+        title: 'Message Sent! 💌',
+        text: "Thank you for contacting us. We'll get back to you soon!",
+        icon: 'success',
+        confirmButtonText: 'Yay!',
+        confirmButtonColor: '#ff69b4'
+      }).then(() => {
+        location.reload();
+      });
+    });
+  });
+</script>
+
+ 
+</body>
+</html>

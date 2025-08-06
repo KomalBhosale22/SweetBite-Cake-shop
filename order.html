@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order | SweetBite Cakes</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    @keyframes floatHearts {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.floating-heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://cdn-icons-png.flaticon.com/128/833/833472.png') no-repeat center;
+  background-size: contain;
+  animation: floatHearts 6s linear infinite;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.floating-heart:nth-child(1) { left: 10%; animation-delay: 1s; }
+.floating-heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+.floating-heart:nth-child(3) { left: 50%; animation-delay: 3s; }
+.floating-heart:nth-child(4) { left: 70%; animation-delay: 4s; }
+.floating-heart:nth-child(5) { left: 90%; animation-delay: 5s; }
+ 
+  </style>
+</head>
+<body>
+   
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+<div class="floating-heart"></div>
+
+  <header>
+
+    <nav>
+      <h1>SweetBite 🍰</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" >View Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form class="order-form">
+    <h3>Place Your Order 🍰</h3>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" required>
+
+    <label for="address">Delivery Address</label>
+    <textarea id="address" rows="3" required></textarea>
+    </select>
+
+    <label for="date">Delivery Date</label>
+    <input type="date" id="date" required>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" min="1" max="10" value="1" required>
+
+
+    <label for="note">Special Instructions (optional)</label>
+    <textarea id="note" rows="2"></textarea>
+
+  <label for="customImage">Upload Your Cake Design (optional):</label>
+  <input type="file" id="customImage" accept="image/*">
+
+  <!-- Rest of your fields -->
+  <button type="submit" class="btn order-submit">Place Order 💖</button>
+
+  </form>
+ <!-- Cute Success Popup -->
+<div id="success-popup" class="popup hidden">
+  <div class="popup-box">
+    <h2>🎉 Order Placed!</h2>
+    <p>Thank you for your order. We’ll start baking your dream cake! 🎂</p>
+  </div>
+</div>
+
+<script>
+  const form = document.querySelector('.order-form');
+  const popup = document.getElementById('success-popup');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Show the popup
+    popup.classList.remove('hidden');
+
+    // Refresh after 3 seconds
+    setTimeout(() => {
+      location.reload();
+    }, 3000);
+  });
+</script>
+
+   
+
+<center><a href="index.html" class="fancy-btn" >🏠 Home</a></center>
+  <footer>
+    <p>🍰 SweetBite Cakes &copy; 2025 | We deliver sweet smiles!</p>
+  </footer>
+</body>
+</html>
+ 
+      
