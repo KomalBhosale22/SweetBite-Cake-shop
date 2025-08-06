@@ -34,7 +34,7 @@
   z-index: 1;
   opacity: 0.4;
 }
-nav a {
+/*nav a {
       margin-left: 20px;
       text-decoration: none;
       color: #ff4d88;
@@ -44,7 +44,35 @@ nav a {
 
     nav a:hover {
       color: #ff66a3;
-    }
+    }*/
+    .topbar {
+  background-color: #ffe4ec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  box-shadow: 0 2px 8px rgba(255, 182, 193, 0.2);
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #ff69b4;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  font-family: 'Poppins', sans-serif;
+  color: #ff1493;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d8136f;
+}
+
 
 
 .floating-heart:nth-child(1) { left: 10%; animation-delay: 1s; }
@@ -52,6 +80,7 @@ nav a {
 .floating-heart:nth-child(3) { left: 50%; animation-delay: 3s; }
 .floating-heart:nth-child(4) { left: 70%; animation-delay: 4s; }
 .floating-heart:nth-child(5) { left: 90%; animation-delay: 5s; }
+  
  
   </style>
 </head>
@@ -63,15 +92,16 @@ nav a {
 <div class="floating-heart"></div>
 <div class="floating-heart"></div>
 
-  <header>
-    <div class="logo">SweetBite 🍰</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="order.html">Order</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+ <header class="topbar">
+  <div class="logo">SweetBite 🍰</div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
 
   <form class="order-form">
     <h3>Place Your Order 🍰</h3>
@@ -138,6 +168,7 @@ nav a {
  
 
       
+
 
 
 
